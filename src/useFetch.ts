@@ -240,7 +240,7 @@ function useFetch<TData = any>(...args: UseFetchArgs): UseFetch<TData> {
 
   // Cancel any running request when unmounting to avoid updating state after component has unmounted
   // This can happen if a request's promise resolves after component unmounts
-  useEffect(() => request.abort, [])
+  // useEffect(() => request.abort, [])
 
   if (suspense && suspender.current) {
     if (isServer) throw new Error('Suspense on server side is not yet supported! 🙅‍♂️')
